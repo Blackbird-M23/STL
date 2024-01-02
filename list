@@ -1,0 +1,166 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    list <int> li;
+    li.push_back(1);
+    li.push_back(2);
+    li.push_back(3);
+
+    // print 1
+    cout << "Print with iterator\n";
+    list <int> :: iterator it;
+    for(it = li.begin(); it != li.end(); it++) cout << *it << ' ';
+    cout << "\n";
+
+     // print 2
+     cout << "Print with auto iterator\n";
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+
+// push_front()
+    cout << "\npush_front() : add new value in the front\n";
+    li.push_front(4);
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+
+// front()
+    cout << "\nfront() : get the value of the front\n";
+    int x = li.front();
+    cout << x << "\n";
+
+// back()
+    cout << "\nback() : get the value 0f the back\n";
+    x = li.back();
+    cout << x << "\n";
+
+// pop_front()
+    cout << "\npop_front() : delete the value from the front\n";
+    li.pop_front();
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+
+// pop_back();
+    cout << "\npop_back() : delete the value from the back\n";
+    li.pop_back();
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+
+// size()
+    cout << "\nsize() : the size of the list\n";
+    cout << li.size() << endl;
+
+// clear
+    cout << "\nclear() : clearing all the values making the list empty\n";
+    li.clear();
+    for(auto it : li) cout << it << endl;
+    cout << endl;
+
+// empty()
+    cout << "\nempty() : to check whether the list is empty or not\n";
+    (li.empty())? cout << "EMPTY\n" : cout << "NOT EMPTY\n";
+
+// insert() using iteartor
+    cout << "\ninsert() : inserting value in the list\n";
+
+    li.insert(li.begin(), 1);
+    for(auto it : li) cout << it << ' ';
+    cout << endl;
+
+    //list <int> :: iterator it;  declare if not declared, I've declared it before
+    it = li.begin();
+    advance(it, 1); // using advance() to move the iterator from its position
+    li.insert(it, 2);
+    for(auto it : li) cout << it << ' ';
+    cout << endl;
+    it = li.begin();
+    // multiple insertion of same value
+    advance(it, 2);  
+    li.insert(it,2,3); // insert 3, 2 times
+     for(auto it : li) cout << it << ' ';
+    cout << endl;
+
+    advance(it, 4);
+    li.insert(it, 5);
+    for(auto it : li) cout << it << ' ';
+    cout << endl;
+
+// erase()
+    cout << "\nerase() : to erase an element from the list\n";
+
+    it = li.begin();
+    li.erase(it);
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+    it = li.begin();
+    advance(it, 2);
+    li.erase(it);
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+// multiple erase
+    cout << "\nDeleting multiple\n";
+    li.push_back(4);
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+    list <int> :: iterator it2;
+    it = li.begin();
+    it2 = li.begin();
+    advance(it2, 2);
+
+    li.erase(it, it2);
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+
+
+// remove(x) 
+    cout << "\nremove(x) : to remove all the x from the list {5,4,5,1,2,3,3,2,1,6,6}\n";
+    li = {5,4,5,1,2,3,3,2,1,6,6};
+    li.remove(6);
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+
+// reverse()
+    cout << "\nreverse() : to reverse the list {5,4,5,1,2,3,3,2,1}\n";
+    li.reverse();
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+
+// sort() -> li.sort(); no iterator is needed
+    cout << "\nsort() : sorting the list\n";
+    li.sort();
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+
+// unique()
+    cout << "\nunique() : subsequent same value will be removed\n";
+    li.unique();
+    for(auto it : li) cout << it << ' ';
+    cout << "\n";
+
+// swap()
+    cout << "\n swap() : swapping betweewn two lists\n";
+    list <int> li2 = {2,3,5,7};
+
+    cout << "li2 : ";
+    for(auto it : li2) cout << it << ' ';
+    cout << "\n";
+
+    swap(li, li2);
+     cout << "li : ";
+     for(auto it : li) cout << it << ' ';
+    cout << "\n";
+
+     cout << "li2 : ";
+     for(auto it : li2) cout << it << ' ';
+    cout << "\n";
+
+// merge only works for sorted lists
+    cout << "\nmerge() : to merge two sorted lists\n";
+
+    li.merge(li2);
+     for(auto it : li) cout << it << ' ';
+    cout << "\n";
+
+}
+
