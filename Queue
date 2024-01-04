@@ -1,0 +1,76 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+// declaration
+    queue <int> q;
+
+// push()
+    cout << "push() : to push data in queue\n";
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+
+// size();
+    cout << "\nsize() : to find the size of queue\n";
+    int l = q.size();
+    cout << l << endl;
+
+// empty();
+    cout << "\nempty() : to check whether the queue is empty\n";
+    if(q.empty()) cout << "EMPTY\n";
+    else cout << "NOT EMPTY\n";
+
+// front();
+    cout << "\nfront() : to find the first element of the queue\n";
+    cout << q.front() << endl;
+
+// back();
+    cout << "\nback() : to find the last element of the queue\n";
+    cout << q.back() << endl;
+
+// pop();
+    cout << "\npop() to delete the first element \n";
+    q.pop();
+    cout << q.front() << endl;
+
+// printing the values of queue using pop
+    while(!q.empty()){  // while(q.size() > 0)
+        cout << q.front() << ' ';
+        q.pop();
+    }
+
+//  emplace() 
+    cout << "\n emplace() : substitute of push()\n";
+    q.emplace(3);
+    q.emplace(5);
+    q.emplace(1);
+    while(!q.empty()){  // while(q.size() > 0)
+        cout << q.front() << ' ';
+        q.pop();
+    }
+
+// swap() - equal sized
+    cout << "\n swap() : to swap the values of two queues of equal size\n";
+    queue <int> q2;
+    q.emplace(3);
+    q.emplace(5);
+    q.emplace(1);
+    
+    q2.push(12);
+    q2.push(15);
+    q2.push(2);
+
+    q.swap(q2);
+     while(!q.empty()){  // while(q.size() > 0)
+        cout << q.front() << ' ';
+        q.pop();
+    }
+    cout << "\n";
+     while(!q2.empty()){  // while(q.size() > 0)
+        cout << q2.front() << ' ';
+        q2.pop();
+    }
+}
