@@ -1,0 +1,81 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+// declaration
+    priority_queue <int> pq; // for descending order
+    priority_queue <int, vector <int>, greater <int> > pq2; // for ascending order
+
+// push()
+    cout << "push() : to push data in Pqueue\n pq : ";
+    pq.push(1);
+    pq.push(2);
+    pq.push(3);
+    pq.push(4);
+
+    // printing the values of Pqueue using pop
+    while(!pq.empty()){  // while(q.size() > 0)
+        cout << pq.top() << ' ';
+        pq.pop();
+    }
+
+// emplace() 
+    cout << "\n emplace() : substitute of push()\n pq2 : ";
+    pq2.emplace(3);
+    pq2.emplace(5);
+    pq2.emplace(1);
+    pq2.emplace(10);
+    while(!pq2.empty()){  // while(q.size() > 0)
+        cout << pq2.top() << ' ';
+        pq2.pop();
+    }
+
+
+// size();
+    cout << "\n\nsize() : to find the size of Pqueue\n";
+    int l = pq.size();
+    cout << l << endl;
+
+// empty();
+    cout << "\nempty() : to check whether the Pqueue is empty\n";
+    if(pq.empty()) cout << "EMPTY\n";
+    else cout << "NOT EMPTY\n";
+
+// top();
+    pq.push(3);
+    pq.push(5);
+    pq.push(1);
+    pq.push(17);
+    
+    cout << "\n top() : to find the first element of the Pqueue\n";
+    cout << pq.top() << endl;
+
+// pop();
+    cout << "\npop() to delete the first element \n";
+    pq.pop();
+    cout << pq.top() << endl;
+
+// swap()
+    cout << "\n swap() : to swap the values of two Pqueue\n";
+
+    //  pq.swap(pq2); // it is not permissible because their reference type is not the same
+
+    priority_queue <int> pq1;
+    pq1.emplace(31);
+    pq1.emplace(15);
+    pq1.emplace(10);
+    pq1.emplace(11);
+
+    pq.swap(pq1);
+    cout << "pq : ";
+    while(!pq.empty()){  // while(Pq.size() > 0)
+        cout << pq.top() << ' ';
+        pq.pop();
+    }
+    cout << "\npq1 : ";
+     while(!pq1.empty()){  // while(Pq1.size() > 0)
+        cout << pq1.top() << ' ';
+        pq1.pop();
+    }
+}
